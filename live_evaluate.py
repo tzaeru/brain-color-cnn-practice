@@ -109,8 +109,8 @@ ax2.add_patch(
         1.0,
         1.0,
         fill=True,
-        edgecolor='r',
-        facecolor='r'
+        edgecolor='g',
+        facecolor='g'
 ))
 plt.axis('off')
 plt.show()

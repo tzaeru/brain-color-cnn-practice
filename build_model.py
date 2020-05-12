@@ -95,6 +95,9 @@ test_dataset = tf.data.Dataset.from_tensor_slices((test_data, test_labels)).batc
 model = Sequential()
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu', input_shape=(512,1)))
 model.add(Conv1D(filters=64, kernel_size=2, activation='relu'))
+model.add(Conv1D(filters=64, kernel_size=2, activation='relu'))
+model.add(Conv1D(filters=64, kernel_size=2, activation='relu'))
+model.add(Conv1D(filters=64, kernel_size=2, activation='relu'))
 model.add(Dropout(0.1))
 model.add(MaxPooling1D(pool_size=1))
 model.add(Flatten())
@@ -102,7 +105,7 @@ model.add(Dense(256, activation='tanh'))
 model.add(Dense(3, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-model.fit(train_dataset, epochs=10,
+model.fit(train_dataset, epochs=100,
   verbose=1, shuffle=True)
 
 model.evaluate(test_dataset)
